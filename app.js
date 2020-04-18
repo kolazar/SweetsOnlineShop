@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
 
 
 const url = config.mongoUrl;
-const connect = mongoose.connect(url, { useNewUrlParser: true }); 
+const connect = mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }); 
 
 connect.then((db)=>{
   console.log('Connected correctly to the server');
