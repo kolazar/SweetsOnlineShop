@@ -5,7 +5,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var passport = require('passport');
-var config = require('./config');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,8 +15,6 @@ var favoriteRouter = require('./routes/favoriteRouter');
 
 const mongoose = require('mongoose');
 
-
-const url = config.mongoUrl;
 const connect = mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }); 
 
 connect.then((db)=>{
