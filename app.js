@@ -41,7 +41,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(passport.initialize());
 app.use(session({
-  secret: config.secretKey,
+  secret: process.env.SECRET_KEY,
   resave: false,
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection}),
